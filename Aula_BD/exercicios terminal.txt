@@ -1,0 +1,4 @@
+db.aluna.find({"profissao": { $in: ["matematica", "cientista de computação"]} }).pretty()
+db.aluna.find({ $or: [{ "profissao": { $in: ["matematica", "cientista da computação"]}}, {"nome": { $in: ["Ada Lovelace", "Grace Hopper"]} }] }).pretty()
+db.aluna.find({ $or: [{ "profissao": "matematica"}, {"profissao": "cientista de computação"}] }).pretty()
+db.aluna.find({ $or: [{"nome": "Ada Lovelace"},{ "profissao": { $in: ["matematica", "cientista de computação"]} } ] }).pretty()
